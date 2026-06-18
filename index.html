@@ -3,8 +3,23 @@
 <head>
 <title>Google Classroom</title>
 <link rel="shortcut icon" href="https://ssl.gstatic.com/classroom/favicon.png">
+<style>
+   #overlayPage {
+    position: fixed;
+    inset: 0;
+    background: white;
+    z-index: 9999;
+    display: none; /* hidden by default */
+    padding: 20px;
+  }
+</style>
 </head>
 <body>
+  <div id="mainPage">
 <iframe style="position: absolute; width: 100%; height: 100%;" src="https://overeasy.club/" scrolling="no"></iframe>
+  </div>
+  <div id="overlayPage">
+  <iframe style="position: absolute; width: 100%; height: 100%;" src="./class.html" scrolling="no"></iframe>
+</div>
 </body>
 </html>
