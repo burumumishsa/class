@@ -12,7 +12,8 @@
     display: none; /* hidden by default */
   }
 </style>
-   <script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
   const overlay = document.getElementById("overlayPage");
 
   function showOverlay() {
@@ -24,13 +25,10 @@
   }
 
   document.addEventListener("keydown", (event) => {
-    // ALT (left alt usually) -> show overlay
     if (event.code === "AltLeft") {
       showOverlay();
     }
 
-    // ALTGR (Right Alt / AltGraph) -> hide overlay
-    // Many browsers report AltGr as "AltRight" + ctrl/alt combination or AltGraph state
     if (
       event.code === "AltRight" ||
       event.key === "AltGraph" ||
@@ -40,12 +38,12 @@
     }
   });
 
-  // Optional: prevent default browser behavior for Alt key combos
   document.addEventListener("keydown", (event) => {
     if (event.code === "AltLeft" || event.code === "AltRight") {
       event.preventDefault();
     }
   });
+});
 </script>
 </head>
 <body>
